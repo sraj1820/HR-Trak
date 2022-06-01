@@ -6,7 +6,9 @@ const EmployeeSchema  = new Schema ({
     email: {type: String, required: true},
     phone : {type: Number, required: true},
     address: {type: String, required: true},
-    position: {type: String, required: true},
-    gender: {type: String, required: true},
+    position: {type: String, required: false},
+    gender: {type: String, required: false},
     department:  {type: Schema.Types.ObjectId, ref: 'Department'}
 })
+
+module.exports = mongoose.model('Employee', EmployeeSchema)
