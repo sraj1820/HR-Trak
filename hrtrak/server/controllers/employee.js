@@ -39,10 +39,27 @@ async function createEmployee(req,res) {
     }
 }
 
+async function show (req,res) {
+    console.log(req.params.id)
+    try{
+        const employee = await Employee.findById(req.params.id)
+        console.log(employee)
+        res.send({
+            status:200,
+            data: employee
+        })
+    } catch (err){
+        res.status(500).send({
+            status:500,
+            data:err
+        })
+    }
+}
 
 
 module.exports = {
     index,
     allEmployees,
-    create: createEmployee
+    create: createEmployee,
+    show
 }

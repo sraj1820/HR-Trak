@@ -10,6 +10,7 @@ router.get('/all', employeeCtrl.allEmployees)
 
 router.post('/create', employeeCtrl.create)
 
+router.get('/:id', employeeCtrl.show)
 
 
 module.exports = router
