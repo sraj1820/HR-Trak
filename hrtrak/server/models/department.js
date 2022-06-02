@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const DepartmentSchema = new Schema({
     name: {type: String,required: true},
-    manager: {type: Schema.Types.ObjectId, ref: 'Department'},
+    manager: {type: Schema.Types.ObjectId, ref: 'Employee'},
     description: {type: String,required: true},
     phone: {type: Number, required: true},
 

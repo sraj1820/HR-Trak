@@ -5,18 +5,18 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import '../EmployeeListPage/employeeList.css'
 
 
-function EmployeeList(props) {
+function DepartmentList(props) {
 
-  const [employees, setEmployees] = useState([])
+  const [departments, setDepartments] = useState([])
 
 
 
 useEffect(() =>{
-  const urlPath = '/api/employee/all';
+  const urlPath = '/api/department/all';
   fetch(urlPath)
   . then((resp) => resp.json())
   .then((resp) =>{
-    setEmployees(resp.data)
+    setDepartments(resp.data)
   })
 },[])
 
@@ -25,24 +25,24 @@ useEffect(() =>{
   
   
     
-  <div className='EmployeeList'>
-     <NewEmployee addEmployeeToList={(employee) => {
-        const allEmployees = [...employees, employee]
-        setEmployees(allEmployees)
+  <div className='DepartmentList'>
+     <NewDepartment addDepartmentoList={(department) => {
+        const allDepartments = [...departments, department]
+        setDepartments(allDepartments)
       }}/>
 
-    <h1> All Employees </h1>
+    <h1> Departments </h1>
       
-    {console.log(employees)}
-    {employees.map((employee) =>{
+    {console.log(departments)}
+    {departments.map((department) =>{
       return(
-      <div key={employee._id}>
+      <div key={department._id}>
         <Card style={{ width: '18rem' }}>
         <Card.Body ClassName = "Card-Body">
-          <Card.Title>{employee.name}</Card.Title>
+          <Card.Title>{department.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{employee.email}</Card.Subtitle>
           <Card.Text>
-           {employee.position} {employee.department}
+           {department.description} {department.manager}
           </Card.Text>
           <Card.Link href="#">Card Link</Card.Link>
           <Card.Link href="#">Another Link</Card.Link>
@@ -56,4 +56,4 @@ useEffect(() =>{
   
   )}
 
-export default EmployeeList;
+export default DepartmentList;

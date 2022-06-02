@@ -2,11 +2,15 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const departmentRouter = require('./server/routes/department')
+const employeeRouter = require('./server/routes/employee')
+
 
 require('dotenv').config()
 require('../hrtrak/server/config/database')
 
-const employeeRouter = require('./server/routes/employee')
+
+
 
 const app = express();
 
@@ -20,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/employee', employeeRouter);
+app.use('/api/department', departmentRouter)
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work

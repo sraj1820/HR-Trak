@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactDOM from 'react-dom/client';
 import {makePostRequest} from '../../utils/utils'
+import Form from 'react-bootstrap/Form'
 
 
 function AddEmployee(props) {
@@ -11,6 +12,7 @@ function AddEmployee(props) {
 
     return (
         <div>
+            Name:
             <input
                 value={name}
                 onChange={
@@ -18,6 +20,7 @@ function AddEmployee(props) {
                 }
             />
             <br />
+            Email:
             <input
                 value={email}
                 onChange={
@@ -25,6 +28,7 @@ function AddEmployee(props) {
                 }
             />
             <br />
+            Phone:
             <input
                 value={phone}
                 onChange={
@@ -32,13 +36,14 @@ function AddEmployee(props) {
                 }
             />
             <br />
+            Address:
             <input
                 value={address}
                 onChange={
                     (e) => setAddress(e.target.value)
                 }
             />
-      
+            <br/>
             <button onClick={() => {
                 const employee = { name, email, phone, address }
                 makePostRequest('/api/employee/create', employee)
