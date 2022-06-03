@@ -26,10 +26,10 @@ useEffect(() =>{
   
     
   <div className='DepartmentList'>
-     <NewDepartment addDepartmentoList={(department) => {
-        const allDepartments = [...departments, department]
-        setDepartments(allDepartments)
-      }}/>
+  //    {/* <NewDepartment addDepartmentoList={(department) => {
+  //       const allDepartments = [...departments, department]
+  //       setDepartments(allDepartments)
+  //     }}/> */}
 
     <h1> Departments </h1>
       
@@ -40,7 +40,7 @@ useEffect(() =>{
         <Card style={{ width: '18rem' }}>
         <Card.Body ClassName = "Card-Body">
           <Card.Title>{department.name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{employee.email}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
           <Card.Text>
            {department.description} {department.manager}
           </Card.Text>

@@ -13,13 +13,16 @@ function EmployeeDetails (props){
         })
       },[])
 
-
-      return (
-          <div> 
+      employeeDetails.map(employee =>{
+        return (
+          <div key={employee._id}>
+            {employee.name}
 
               
           </div>
       )
+      })
+     
 }
 
-   
+export default EmployeeDetails;

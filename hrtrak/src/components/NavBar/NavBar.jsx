@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import "../NavBar/navBar.css"
 
 
@@ -15,6 +16,7 @@ function MainNavbar(props) {
       <Nav className="me-auto">
         <Nav.Link href="home">Home</Nav.Link>
         <Nav.Link href="employee/all">View All Employees</Nav.Link>
+        <Nav.Link href="department/all">View All Departments</Nav.Link>
         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
