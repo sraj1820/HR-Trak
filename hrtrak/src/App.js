@@ -16,6 +16,7 @@ function App() {
     <Routes>
       <Route path="/employee/all" element ={<EmployeeList/>} />
       <Route path="/department/all" element={<Department/>} />
+      <Route path= "/employee/1" element = {<EmployeeDetails/>} />
     </Routes>
     </BrowserRouter>
     

@@ -12,5 +12,7 @@ router.post('/create', employeeCtrl.create)
 
 router.get('/:id', employeeCtrl.show)
 
+router.delete('/:id', employeeCtrl.delete)
+
 
 module.exports = router

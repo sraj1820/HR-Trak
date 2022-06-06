@@ -5,3 +5,4 @@ export const makePostRequest = (url, dataObj = {}) => {
         body: JSON.stringify(dataObj)
     })
 }
+

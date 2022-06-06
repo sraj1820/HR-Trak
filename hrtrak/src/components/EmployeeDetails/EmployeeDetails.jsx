@@ -17,6 +17,7 @@ function EmployeeDetails (props){
         return (
           <div key={employee._id}>
             {employee.name}
+            {employee.department.name}
 
               
           </div>

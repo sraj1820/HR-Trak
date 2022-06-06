@@ -3,7 +3,7 @@ const Department = require('../models/department')
 
 async function allDepartments(req,res) {
     try{
-        const allDepartments = await Department.find({})
+        const allDepartments = await Department.find({}).populate('manager')
         console.log(allDepartments)  
         res.send({
             status:200,

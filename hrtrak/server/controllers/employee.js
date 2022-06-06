@@ -6,7 +6,7 @@ async function index(req,res) {
 
 async function allEmployees(req,res) {
     try{
-        const allEmployees = await Employee.find({})
+        const allEmployees = await Employee.find({}).populate('department')
         console.log(allEmployees)  
         res.send({
             status:200,
@@ -42,7 +42,7 @@ async function createEmployee(req,res) {
 async function show (req,res) {
     console.log(req.params.id)
     try{
-        const employee = await Employee.findById(req.params.id)
+        const employee = await Employee.findById(req.params.id).populate('department');
         console.log(employee)
         res.send({
             status:200,
@@ -56,10 +56,27 @@ async function show (req,res) {
     }
 }
 
+async function deleteEmployee (req,res) {
+    const deletedEmployee = await Employee.findByIdAndDelete(req.params.id)
+    try {
+        console.log(deletedEmployee)
+        res.send({
+            status:200,
+            data: deletedEmployee
+        })
+    } catch (err) {
+        res.status(500).send({
+            status:500,
+            data:deletedEmployee
+        })
+    }
+}
+
 
 module.exports = {
     index,
     allEmployees,
     create: createEmployee,
-    show
+    show,
+    delete:deleteEmployee
 }

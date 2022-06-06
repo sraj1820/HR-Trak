@@ -17,8 +17,23 @@ useEffect(() =>{
   . then((resp) => resp.json())
   .then((resp) =>{
     setEmployees(resp.data)
+    console.log(resp.data)
   })
 },[])
+
+const [departments, setDepartments] = useState([])
+
+
+
+useEffect(() =>{
+  const urlPath = '/api/department/all';
+  fetch(urlPath)
+  . then((resp) => resp.json())
+  .then((resp) =>{
+    setDepartments(resp.data)
+  })
+},[])
+
 
 
   return (
@@ -26,10 +41,7 @@ useEffect(() =>{
   
     
   <div className='EmployeeList'>
-     <NewEmployee addEmployeeToList={(employee) => {
-        const allEmployees = [...employees, employee]
-        setEmployees(allEmployees)
-      }}/>
+    
 
     <h1> All Employees </h1>
       
@@ -37,21 +49,26 @@ useEffect(() =>{
     {employees.map((employee) =>{
       return(
       <div key={employee._id}>
+        {console.log(employee._id)}
         <Card style={{ width: '18rem' }}>
-        <Card.Body ClassName = "Card-Body">
+        <Card.Body className = "Card-Body">
           <Card.Title>{employee.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{employee.email}</Card.Subtitle>
           <Card.Text>
-           {employee.position} {employee.department}
+           <h6>Position:</h6> {employee.position}
+           <br/> <h6>Department:</h6>  {employee.department.name}
           </Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
+          <Card.Link href="/employee/{employee._id}">Show Details</Card.Link>
+          <Card.Link href="#">Delete</Card.Link>
         </Card.Body>
       </Card>
       </div>
       )
     })}
-      
+       <NewEmployee addEmployeeToList={(employee) => {
+        const allEmployees = [...employees, employee]
+        setEmployees(allEmployees) 
+      }}  departments = {departments}/>
  </div>
   
   )}
