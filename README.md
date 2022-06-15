@@ -6,14 +6,19 @@ HR-Trak:
 This app is meant to be used internally within any organization to keep track of employees and departments as well as updating any information within them. 
 ### Technologies Used
 
-This application was created using React.js, MongoDB, Node JS, Express, and bootstrap.
+Stack: This application was created using React, MongoDB, Node JS, Express, and bootstrap.
+
+Current Features:
+- Ability to add a new employee and a new department. Each new employee requires an existing department and each department requires an existing manager(employee)
+- ability to see more details about each employee
+- ability to delete an employee or department
 
 ### Get Started
 
-Click on the following link to launch the game:
+Click on the following link to launch the application:
 [HRTrak]()
 
-Once you are prompted to the main page of the application, please sign in with google to get the session started
+
 
 ### Next Steps
 

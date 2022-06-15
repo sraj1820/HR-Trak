@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/card'
 import NewEmployee from '../NewEmployeeForm/NewEmployee'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import '../EmployeeListPage/employeeList.css'
+import EmployeeDetails from '../EmployeeDetails/EmployeeDetails'
+import {Link} from 'react-router-dom'
 
 
 function EmployeeList(props) {
@@ -58,13 +60,14 @@ useEffect(() =>{
            <h6>Position:</h6> {employee.position}
            <br/> <h6>Department:</h6>  {employee.department.name}
           </Card.Text>
-          <Card.Link href="/employee/{employee._id}">Show Details</Card.Link>
+          <Link to ={{pathname:`/employee/${employee._id}`, state: {id: employee._id}}}>Show Details </Link> <br/>
           <Card.Link href="#">Delete</Card.Link>
         </Card.Body>
       </Card>
       </div>
       )
     })}
+      
        <NewEmployee addEmployeeToList={(employee) => {
         const allEmployees = [...employees, employee]
         setEmployees(allEmployees) 
