@@ -10,8 +10,8 @@ Stack: This application was created using React, MongoDB, Node JS, Express, and 
 
 Current Features:
 - Ability to add a new employee and a new department. Each new employee requires an existing department and each department requires an existing manager(employee)
-- ability to see more details about each employee
-- ability to delete an employee or department
+- Ability to see more details about each employee
+- Ability to delete an employee or department
 
 ### Screenshots
 
