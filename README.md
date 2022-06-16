@@ -13,10 +13,13 @@ Current Features:
 - ability to see more details about each employee
 - ability to delete an employee or department
 
-### Get Started
+### Screenshots
 
-Click on the following link to launch the application:
-[HRTrak]()
+Employee List Page:
+![]('/../screenshots/allEmployees.png)
+
+Department List Page:
+![]('./../screenshots/allDepartments.png)
 
 
 

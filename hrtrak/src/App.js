@@ -5,6 +5,7 @@ import EmployeeList from './components/EmployeeListPage/EmployeeList'
 import NewEmployeeForm from './components/NewEmployeeForm/NewEmployee'
 import EmployeeDetails from './components/EmployeeDetails/EmployeeDetails'
 import Department from './components/Department/Department'
+import HomePage from './components/HomePage/HomePage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
     <BrowserRouter>
     <Routes>
+      <Route path= "/employee/home" element = {<HomePage />} />
       <Route path="/employee/all" element ={<EmployeeList/>} />
       <Route path="/department/all" element={<Department/>} />
       <Route path= "/employee/:id" element = {<EmployeeDetails/>} />

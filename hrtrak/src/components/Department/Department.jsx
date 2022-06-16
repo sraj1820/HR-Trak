@@ -4,6 +4,7 @@ import NewEmployee from '../NewEmployeeForm/NewEmployee'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import '../EmployeeListPage/employeeList.css'
 import NewDepartment from '../NewDepartment/NewDepartmentForm'
+import '../Department/departmentList.css'
 
 
 function DepartmentList(props) {
@@ -27,12 +28,10 @@ useEffect(() =>{
   
     
   <div className='DepartmentList'>
-      <NewDepartment addDepartmenToList={(department) => {
-        const allDepartments = [...departments, department]
-        setDepartments(allDepartments)
-      }}/>
+       <h1> Departments </h1>
+    <div className = 'Department'>
 
-    <h1> Departments </h1>
+ 
       
     {console.log(departments)}
     {departments.map((department) =>{
@@ -52,7 +51,14 @@ useEffect(() =>{
       </div>
       )
     })}
-      
+    <br/>
+    <br/>
+    <br/>
+    </div>
+        <NewDepartment addDepartmenToList={(department) => {
+        const allDepartments = [...departments, department]
+        setDepartments(allDepartments)
+      }}/>
  </div>
   
   )}
