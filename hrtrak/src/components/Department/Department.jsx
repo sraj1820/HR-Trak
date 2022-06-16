@@ -44,8 +44,8 @@ useEffect(() =>{
           <Card.Text>
            <h6>Description:</h6> {department.description} <br/> <h6>Manager:</h6> {department.manager.name}
           </Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
+      
+          <Card.Link href="#">Delete</Card.Link>
         </Card.Body>
       </Card>
       </div>
