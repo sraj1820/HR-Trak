@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/NavBar/NavBar'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import EmployeeList from './components/EmployeeListPage/EmployeeList'
-import NewEmployeeForm from './components/NewEmployeeForm/NewEmployee'
+import NewEmployee from './components/NewEmployeeForm/NewEmployee'
 import EmployeeDetails from './components/EmployeeDetails/EmployeeDetails'
 import Department from './components/Department/Department'
 import HomePage from './components/HomePage/HomePage'
@@ -19,6 +19,8 @@ function App() {
       <Route path="/employee/all" element ={<EmployeeList/>} />
       <Route path="/department/all" element={<Department/>} />
       <Route path= "/employee/:id" element = {<EmployeeDetails/>} />
+      <Route path = "/employee/create" element = {<NewEmployee />} />
+      
     </Routes>
     </BrowserRouter>
     

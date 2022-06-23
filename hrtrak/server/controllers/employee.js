@@ -1,4 +1,5 @@
 const Employee = require('../models/employee')
+const Department = require('../models/department')
 
 async function index(req,res) {
     res.send('This is the home page!')
@@ -24,8 +25,17 @@ async function allEmployees(req,res) {
 
 async function createEmployee(req,res) {
     console.log(req.body)
+
+    const findDepartment =await Department.findOne({name: req.body.department})
+    console.log(findDepartment)
+    const newEmployee = {
+        ...req.body,
+        department:findDepartment._id
+    }
+    console.log(newEmployee)
     try{
-        await Employee.create(req.body)
+
+        await Employee.create(newEmployee)
 
         res.send({
             status:200,

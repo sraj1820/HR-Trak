@@ -1,4 +1,5 @@
 const Department = require('../models/department')
+const Employee = require('../models/employee')
 
 
 async function allDepartments(req,res) {
@@ -20,8 +21,14 @@ async function allDepartments(req,res) {
 
 async function createDepartment(req,res) {
     console.log(req.body)
+    const findEmployee =await Employee.findOne({name: req.body.manager})
+    console.log(findEmployee)
+    const newDepartment = {
+        ...req.body,
+        manager:findEmployee._id
+    }
     try{
-        await Department.create(req.body)
+        await Department.create(newDepartment)
 
         res.send({
             status:200,

@@ -5,36 +5,33 @@ import {useLocation} from 'react-router-dom'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function EmployeeDetails (props){
-     const [employeeDetails, setEmployeeDetails] = useState([])
+     const [employeeDetails, setEmployeeDetails] = useState('')
      const location = useLocation()
      console.log(location)
      console.log(props.prop)
+     console.log(location.state.id)
      useEffect(() =>{
        
-         const urlPath = `/api/employee/${location.state}`;
+         const urlPath = `/api/employee/${location.state.id}`
          fetch(urlPath)
          . then((resp) => resp.json())
          .then((resp) =>{
            setEmployeeDetails(resp.data)
-           console.log(employeeDetails)
          })
-       },[])
-
-      //  employeeDetails.map(employee =>{
-      //   return (
+       },[location])
+      
+        return (
          
-      //      <div key={employee._id}>
-      //        {employee.name}
-      //        {employee.department.name}
+           <div>
+             {console.log(employeeDetails)}
+             {employeeDetails && employeeDetails.name}
+             {employeeDetails && employeeDetails.department.name}
             
               
-      //      </div>
-      // )
-       return (
-        <div> jsk </div>
-       )
-      // })
+           </div>
+      )
+        }
      
-}
+
 
 export default EmployeeDetails;

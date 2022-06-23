@@ -2,6 +2,7 @@ import { useState } from "react";
 import ReactDOM from 'react-dom/client';
 import {makePostRequest} from '../../utils/utils'
 import Form from 'react-bootstrap/Form'
+import '../NewEmployeeForm/newEmployee.css'
 
 
 
@@ -16,9 +17,7 @@ function AddEmployee(props) {
 
 
 
-console.log(props.departments.map(department =>{
-        return department.name
-}))
+
     return (
         <div>
             Name:
@@ -28,7 +27,7 @@ console.log(props.departments.map(department =>{
                     (e) => setName(e.target.value)
                 }
             />
-            <br />
+           
             Email:
             <input
                 value={email}
@@ -36,7 +35,7 @@ console.log(props.departments.map(department =>{
                     (e) => setEmail(e.target.value)
                 }
             />
-            <br />
+            
             Phone:
             <input
                 value={phone}
@@ -44,7 +43,7 @@ console.log(props.departments.map(department =>{
                     (e) => setPhone(e.target.value)
                 }
             />
-            <br />
+            
             Address:
             <input
                 value={address}
@@ -52,7 +51,7 @@ console.log(props.departments.map(department =>{
                     (e) => setAddress(e.target.value)
                 }
             />
-            <br/>
+           
             Position:
             <input
                 value={position}
@@ -60,7 +59,7 @@ console.log(props.departments.map(department =>{
                     (e) => setPosition(e.target.value)
                 }
             />
-            <br/>
+          
 
             Gender:
             <input
@@ -69,7 +68,7 @@ console.log(props.departments.map(department =>{
                     (e) => setGender(e.target.value)
                 }
             />
-            <br/>
+            
 
             Department:
             <input
@@ -78,8 +77,7 @@ console.log(props.departments.map(department =>{
                     (e) => setDepartment(e.target.value)
                 }
             />
-            <br/>
-
+          
 
             <button onClick={() => {
                 const employee = { name, email, phone, address, position, gender, department }
