@@ -59,7 +59,7 @@ useEffect(() =>{
           <Card.Subtitle className="mb-2 text-muted">{employee.email}</Card.Subtitle>
           <Card.Text>
            <h6>Position:</h6> {employee.position}
-           <br/> <h6>Department:</h6>  {employee.department.name}
+           {/* <br/> <h6>Department:</h6>  {employee.department.name} */}
           </Card.Text>
           <Link to ={`/employee/${employee._id}`} state={{id: employee._id}}>Show Details </Link> <br/>
           {/* <Card.Link href="#">Delete</Card.Link> //button onchange callback function making fetch call to backend */}
