@@ -20,7 +20,7 @@ function HomePage(props) {
       </div>
 </div>
     <Carousel.Caption>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <p>The interactive employee portal to keep track of employees and departments within the Organization.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item >
@@ -28,13 +28,13 @@ function HomePage(props) {
       <div class="carousel-inner bg-info" role="listbox">
             <div class="carousel-item active">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
-                    <h1 class="display-1">Hey, Welcome to HR-Trak</h1>
+                    <h1 class="display-1">Current Features:</h1>
                 </div>
             </div>
       </div>
 </div>
     <Carousel.Caption>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <p>Adding employees and departments and linking them with one another. Ability to show employee details and delete</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item >
@@ -42,13 +42,13 @@ function HomePage(props) {
       <div class="carousel-inner bg-info" role="listbox">
             <div class="carousel-item active">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
-                    <h1 class="display-1">Hey, Welcome to HR-Trak</h1>
+                    <h1 class="display-1">Features that will be implemented in the future</h1>
                 </div>
             </div>
       </div>
 </div>
     <Carousel.Caption>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <p>Signup/Login option. Update features for both employees/departments. </p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

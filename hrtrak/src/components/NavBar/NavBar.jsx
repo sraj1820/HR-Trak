@@ -14,7 +14,7 @@ function MainNavbar(props) {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="home">Home</Nav.Link>
+        <Nav.Link href="/employee/home">Home</Nav.Link>
         <Nav.Link href="/employee/all">View All Employees</Nav.Link>
         <Nav.Link href="/employee/create">Create Employee</Nav.Link>
         <Nav.Link href="/department/all">View All Departments</Nav.Link>

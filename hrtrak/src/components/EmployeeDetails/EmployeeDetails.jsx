@@ -37,7 +37,7 @@ function EmployeeDetails (props){
            <div>
              {console.log(employeeDetails)}
              {employeeDetails && employeeDetails.name}
-             {employeeDetails && employeeDetails.department.name}
+             {/* {employeeDetails && employeeDetails.department.name} */}
              <button onClick={deletePost}>
          Delete Employee
           </button>

@@ -42,7 +42,8 @@ useEffect(() =>{
           <Card.Title>{department.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
           <Card.Text>
-           <h6>Description:</h6> {department.description} <br/> <h6>Manager:</h6> {department.manager.name}
+           <h6>Description:</h6> {department.description} <br/> 
+           {/* <h6>Manager:</h6> {department.manager.name} */}
           </Card.Text>
       
           <Card.Link href="#">Delete</Card.Link>
