@@ -1,6 +1,6 @@
-input{
+.form-outline{
     margin: auto !important; 
-    /* width:5%; */
+    width:20%;
     display:block;
     position: center !important;
     
