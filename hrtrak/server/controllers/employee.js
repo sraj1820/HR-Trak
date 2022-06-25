@@ -1,6 +1,7 @@
 const Employee = require('../models/employee')
 const Department = require('../models/department')
 
+
 async function index(req,res) {
     res.send('This is the home page!')
 }
@@ -68,6 +69,8 @@ async function show (req,res) {
 
 async function deleteEmployee (req,res) {
     const deletedEmployee = await Employee.findByIdAndDelete(req.params.id)
+    const deleteManager = Department.findByIdAndDelete({manager:req.params.id})
+    console.log(deleteManager)
     try {
         console.log(deletedEmployee)
         res.send({

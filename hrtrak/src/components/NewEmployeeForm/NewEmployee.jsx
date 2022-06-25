@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {makePostRequest} from '../../utils/utils'
 import Form from 'react-bootstrap/Form'
 import '../NewEmployeeForm/newEmployee.css'
+import { MDBInput, MDBBtn} from 'mdb-react-ui-kit';
 
 
 
@@ -19,41 +20,40 @@ function AddEmployee(props) {
 
 
     return (
+
+       
         <div>
-            Name:
-            <input
+             <h1>Add an Employee </h1>
+            <MDBInput label='Name' id='typeText' type='text' 
                 value={name}
                 onChange={
                     (e) => setName(e.target.value)
                 }
             />
            
-            Email:
-            <input
+            <MDBInput label='Email' id='typeEmail' type='email' 
                 value={email}
                 onChange={
                     (e) => setEmail(e.target.value)
                 }
             />
             
-            Phone:
-            <input
+    
+            <MDBInput label='Phone' id='typePhone' type='tel' 
                 value={phone}
                 onChange={
                     (e) => setPhone(e.target.value)
                 }
             />
             
-            Address:
-            <input
+            <MDBInput label='Address' id='typeText' type='text' 
                 value={address}
                 onChange={
                     (e) => setAddress(e.target.value)
                 }
             />
            
-            Position:
-            <input
+            <MDBInput label='Position' id='typeText' type='text' 
                 value={position}
                 onChange={
                     (e) => setPosition(e.target.value)
@@ -61,8 +61,7 @@ function AddEmployee(props) {
             />
           
 
-            Gender:
-            <input
+            <MDBInput label='Gender' id='typeText' type='text' 
                 value={gender}
                 onChange={
                     (e) => setGender(e.target.value)
@@ -70,8 +69,8 @@ function AddEmployee(props) {
             />
             
 
-            Department:
-            <input
+    
+            <MDBInput label='Department' id='typeText' type='text' 
                 value={department}
                 onChange={
                     (e) => setDepartment(e.target.value)
