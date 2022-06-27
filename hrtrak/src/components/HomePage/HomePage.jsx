@@ -19,7 +19,7 @@ function HomePage(props) {
       </div>
 </div>
     <Carousel.Caption>
-      <p>The interactive employee portal to keep track of employees and departments within the Organization.</p>
+      <p>The interactive employee portal to keep track of employees and departments within the organization.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item >
