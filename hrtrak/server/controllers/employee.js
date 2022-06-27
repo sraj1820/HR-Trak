@@ -6,7 +6,7 @@ const Department = require('../models/department')
 async function allEmployees(req,res) {
     try{
         const allEmployees = await Employee.find({}).populate('department')
-      
+
         res.send({
             status:200,
             data:allEmployees
@@ -17,20 +17,20 @@ async function allEmployees(req,res) {
             data: err
         })
     }
-    
+
 }
 
 
 async function createEmployee(req,res) {
-  
+
 
     const findDepartment =await Department.findOne({name: req.body.department})
-  
+
     const newEmployee = {
         ...req.body,
         department:findDepartment._id
     }
-   
+
     try{
 
         await Employee.create(newEmployee)
@@ -48,10 +48,10 @@ async function createEmployee(req,res) {
 }
 
 async function show (req,res) {
-  
+
     try{
         const employee = await Employee.findById(req.params.id).populate('department');
-     
+
         res.send({
             status:200,
             data: employee
@@ -67,9 +67,9 @@ async function show (req,res) {
 async function deleteEmployee (req,res) {
     // const deletedEmployee = await Employee.findByIdAndDelete(req.params.id)
    const deletedEmployee = await Employee.deleteOne({_id: req.params.id})
-  
+
     try {
-       
+
         res.send({
             status:200,
             data: deletedEmployee
@@ -84,7 +84,7 @@ async function deleteEmployee (req,res) {
 
 
 module.exports = {
-  
+
     allEmployees,
     create: createEmployee,
     show,
