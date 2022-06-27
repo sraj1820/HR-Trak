@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Card from 'react-bootstrap/card'
-import NewEmployee from '../NewEmployeeForm/NewEmployee'
-import {BrowserRouter, Routes, Route} from "react-router-dom"
 import '../EmployeeListPage/employeeList.css'
 import NewDepartment from '../NewDepartment/NewDepartmentForm'
 import '../Department/departmentList.css'
@@ -33,7 +31,7 @@ useEffect(() =>{
 
  
       
-    {console.log(departments)}
+  
     {departments.map((department) =>{
       return(
       <div key={department._id}>
@@ -46,7 +44,7 @@ useEffect(() =>{
            {/* <h6>Manager:</h6> {department.manager.name} */}
           </Card.Text>
       
-          <Card.Link href="#">Delete</Card.Link>
+          <button type="button" class="btn btn-danger" > Delete </button>
         </Card.Body>
       </Card>
       </div>

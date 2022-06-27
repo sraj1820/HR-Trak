@@ -7,9 +7,7 @@ function EmployeeDetails (props){
      const [employeeDetails, setEmployeeDetails] = useState('')
      const [status, setStatus] = useState('')
      const location = useLocation()
-     console.log(location)
-     console.log(props.prop)
-     console.log(location.state.id)
+
      useEffect(() =>{
        
          const urlPath = `/api/employee/${location.state.id}`
@@ -26,7 +24,7 @@ function EmployeeDetails (props){
         async function deletePost() {
             const obj = await fetch(`/api/employee/${location.state.id}`, { method: 'DELETE' });
             setStatus('Delete successful');
-            console.log(obj)
+          
         }
     
         
@@ -35,10 +33,19 @@ function EmployeeDetails (props){
         return (
          
            <div>
-             {console.log(employeeDetails)}
-             {employeeDetails && employeeDetails.name}
-             {/* {employeeDetails && employeeDetails.department.name} */}
-             <button onClick={deletePost}>
+             
+             Name: {employeeDetails && employeeDetails.name}
+             <br/>
+             Gender: {employeeDetails.gender}
+             <br/>
+             Address: {employeeDetails.address}
+             <br/>
+             Contact: {employeeDetails.phone}
+             {/* Department: {employeeDetails.department} */}
+             <br/>
+
+          
+             <button type="button" class="btn btn-danger" href='/employee/all' onClick={deletePost}>
          Delete Employee
           </button>
             

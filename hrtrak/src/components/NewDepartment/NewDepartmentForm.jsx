@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import {makePostRequest} from '../../utils/utils'
 
+import { MDBInput, MDBBtn} from 'mdb-react-ui-kit';
+
 
 
 function AddDepartment(props) {
@@ -12,24 +14,23 @@ function AddDepartment(props) {
   
     return (
         <div>
-            Name:
-            <input
+            <MDBInput label='Name' id='typeText' type='text' 
                 value={name}
                 onChange={
                     (e) => setName(e.target.value)
                 }
             />
             <br />
-            Manager:
-            <input
+        
+            <MDBInput label='Manager' id='typeText' type='text' 
                 value={manager}
                 onChange={
                     (e) => setManager(e.target.value)
                 }
             />
             <br />
-            Description:
-            <input
+
+            <MDBInput label='Description' id='typeText' type='text' 
                 value={description}
                 onChange={
                     (e) => setDescription(e.target.value)
@@ -37,8 +38,7 @@ function AddDepartment(props) {
             />
             <br />
 
-            Phone:
-            <input
+            <MDBInput label='Phone' id='typeText' type='text' 
                 value={phone}
                 onChange={
                     (e) => setPhone(e.target.value)
@@ -47,7 +47,8 @@ function AddDepartment(props) {
             <br />
     
 
-            <button onClick={() => {
+         
+            <button type="button" class="btn btn-success" onClick={() => {
                 const department = { name, manager, description, phone}
                 makePostRequest('/api/department/create', department)
                     .then((resp) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import Alert from 'react-bootstrap/Alert'
 import Carousel from 'react-bootstrap/Carousel'
 import '../HomePage/homePage.css'
 
@@ -54,24 +53,6 @@ function HomePage(props) {
 </Carousel>
 
 
-    {/* <Alert variant="success">
-  <Alert.Heading>Hey, welcome to HR-Trak! </Alert.Heading>
-  <p>
-    This app is meant to be an internal software used by the Human Resources team to list employees and their departments and add any key information.
-
-
-  </p>
-  <hr />
-  <p className="mb-0">
-    <ul>
-      Currently, the following features are available:
-      <li> Ability to create a new employee and department </li>
-      <li> Ability to link an employee with a specific department and vice versa</li>
-      <li> Ability to show details for an employee</li>
-      <li> Ability to delete an employee/department</li>
-    </ul>
-  </p> */}
-  {/* </Alert> */}
 
       </div>
   )}

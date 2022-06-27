@@ -24,6 +24,7 @@ function AddEmployee(props) {
        
         <div>
              <h1>Add an Employee </h1>
+             <h4> Please make sure the department used exists. If it does not, please create one first. </h4>
             <MDBInput label='Name' id='typeText' type='text' 
                 value={name}
                 onChange={
@@ -78,7 +79,7 @@ function AddEmployee(props) {
             />
           
 
-            <button onClick={() => {
+            <button type="button" class="btn btn-success" onClick={() => {
                 const employee = { name, email, phone, address, position, gender, department }
                 makePostRequest('/api/employee/create', employee)
                     .then((resp) => {

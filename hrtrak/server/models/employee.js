@@ -8,7 +8,7 @@ const EmployeeSchema  = new Schema ({
     address: {type: String, required: true},
     position: {type: String, required: false},
     gender: {type: String, required: false},
-    department:  {type: Schema.Types.ObjectId, ref: 'Department'}
+    department:  {type: Schema.Types.ObjectId, ref: 'Department', required: false},
 })
 
 module.exports = mongoose.model('Employee', EmployeeSchema)

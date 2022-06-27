@@ -4,7 +4,7 @@ const employeeCtrl = require('../controllers/employee')
 
 //get home page
 
-router.get('/', employeeCtrl.index)
+
 
 router.get('/all', employeeCtrl.allEmployees)
 

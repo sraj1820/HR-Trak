@@ -22,7 +22,6 @@ useEffect(() =>{
   . then((resp) => resp.json())
   .then((resp) =>{
     setEmployees(resp.data)
-    console.log(resp.data)
   })
 },[])
 
@@ -46,7 +45,7 @@ useEffect(() =>{
 
   
     
-    {console.log(employees)}
+
     
     {employees.map((employee) =>{
       return(

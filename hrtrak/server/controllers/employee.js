@@ -2,14 +2,11 @@ const Employee = require('../models/employee')
 const Department = require('../models/department')
 
 
-async function index(req,res) {
-    res.send('This is the home page!')
-}
 
 async function allEmployees(req,res) {
     try{
         const allEmployees = await Employee.find({}).populate('department')
-        console.log(allEmployees)  
+      
         res.send({
             status:200,
             data:allEmployees
@@ -25,15 +22,15 @@ async function allEmployees(req,res) {
 
 
 async function createEmployee(req,res) {
-    console.log(req.body)
+  
 
     const findDepartment =await Department.findOne({name: req.body.department})
-    console.log(findDepartment)
+  
     const newEmployee = {
         ...req.body,
         department:findDepartment._id
     }
-    console.log(newEmployee)
+   
     try{
 
         await Employee.create(newEmployee)
@@ -51,10 +48,10 @@ async function createEmployee(req,res) {
 }
 
 async function show (req,res) {
-    console.log(req.params.id)
+  
     try{
         const employee = await Employee.findById(req.params.id).populate('department');
-        console.log(employee)
+     
         res.send({
             status:200,
             data: employee
@@ -68,11 +65,11 @@ async function show (req,res) {
 }
 
 async function deleteEmployee (req,res) {
-    const deletedEmployee = await Employee.findByIdAndDelete(req.params.id)
-    const deleteManager = Department.findByIdAndDelete({manager:req.params.id})
-    console.log(deleteManager)
+    // const deletedEmployee = await Employee.findByIdAndDelete(req.params.id)
+   const deletedEmployee = await Employee.deleteOne({_id: req.params.id})
+  
     try {
-        console.log(deletedEmployee)
+       
         res.send({
             status:200,
             data: deletedEmployee
@@ -87,7 +84,7 @@ async function deleteEmployee (req,res) {
 
 
 module.exports = {
-    index,
+  
     allEmployees,
     create: createEmployee,
     show,
