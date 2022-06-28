@@ -32,7 +32,9 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../build"));
+}
 
 // Configure to use port 3001 instead of 3000 during
 // development to avoid collision with React's dev server
