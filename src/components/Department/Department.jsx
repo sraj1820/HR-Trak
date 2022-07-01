@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Card from 'react-bootstrap/card'
+import Card from 'react-bootstrap/Card'
 import '../EmployeeListPage/employeeList.css'
 import NewDepartment from '../NewDepartment/NewDepartmentForm'
 import '../Department/departmentList.css'
