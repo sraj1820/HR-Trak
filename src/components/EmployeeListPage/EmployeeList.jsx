@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Card from 'react-bootstrap/card'
+import Card from 'react-bootstrap/Card';
 import NewEmployee from '../NewEmployeeForm/NewEmployee'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import '../EmployeeListPage/employeeList.css'
