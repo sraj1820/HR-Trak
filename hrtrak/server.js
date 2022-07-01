@@ -2,12 +2,12 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const departmentRouter = require('./server/routes/department')
-const employeeRouter = require('./server/routes/employee')
+const departmentRouter = require('./routes/department')
+const employeeRouter = require('./routes/employee')
 
 
 require('dotenv').config()
-require('../hrtrak/server/config/database')
+require('../hrtrak/config/database')
 
 
 
