@@ -27,7 +27,11 @@ Department List Page:
 ![]('./../screenshots/allDepartments.png)
 
 
+### Getting Started
 
+Please click on the following [link](https://hrtrak.herokuapp.com/employee/home) to get started. Create a department using an existing manager(employee) or create a new employee using an existing department. The input is case sensitive for now. 
+
+All current features and next steps are listed on the application main page.
 
 ### Next Steps
 
